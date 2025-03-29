@@ -1,38 +1,64 @@
 .App {
   text-align: center;
+  font-family: sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app-header {
+  width:100%;
+  background-image: url(images/perferomce.JPG) ;
+  padding: 98px 40px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.app-header h1 {
   color: white;
+  font-size: 2.5em;
+  margin-bottom: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.app-header p {
+  font-size: 1.2em;
+  color: #555;
+  margin-bottom: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.cta-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.app-main {
+  padding: 20px;
+}
+
+.features-section,
+.about-section,
+.contact-section {
+  margin-bottom: 40px;
+}
+
+.features-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.feature {
+  size-adjust: small;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.app-footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  position: static ;
+  bottom: 0;
+  width: 100%;
 }
