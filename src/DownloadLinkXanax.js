@@ -4,19 +4,16 @@ import React, { useState, useEffect } from "react";
 export const DownloadLinkXanax = ({ url, fileName }) => {
   const [countXanax, setXanaxCount] = useState(() => {
     const storedCount = localStorage.getItem("xanax");
-    return storedCount ? parseInt(storedCount) : storedCount;
-
+    return storedCount ? parseInt(storedCount) : 0;
+    
   });
 
   useEffect(() => {
     localStorage.setItem("xanax", countXanax.toString());
   }, [countXanax]);
 
-  const [FinalcountXanax, setFinalXanax] = useState(countXanax)
-
-
   const handleDownload = () => {
-    setXanaxCount(FinalcountXanax + 1);
+    setXanaxCount(prevCount => prevCount + 1);
     fetch(url)
       .then((response) => response.blob())
       .then((blob) => {
@@ -39,7 +36,7 @@ export const DownloadLinkXanax = ({ url, fileName }) => {
   return (
     <div>
       <Button type="primary" onClick={handleDownload}>
-        Donwload Album for free (downloaded {FinalcountXanax} times)
+        Donwload Album for free (downloaded {countXanax} times)
       </Button>
     </div>
   );
