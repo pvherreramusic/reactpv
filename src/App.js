@@ -2,12 +2,14 @@
 import React from "react";
 import "./App.css";
 import xanxacover from "./images/cover2.jpg";
-import { DownloadLink } from "./DownloadLink";
+import {DownloadLinkXanax } from "./DownloadLinkXanax";
 import cigarettescover from "./images/cover.jpg"
+import { DownloadLinkCigarettes } from "./DownloadCigarettes";
 function App() {
   const XanaxandMercydownload =
     "https://pvherreramusicfiles.s3.us-east-1.amazonaws.com/Xanax+and+Mercy+MP3.zip";
      const CigarettesandWeddingsdownload = "https://pvherreramusicfiles.s3.us-east-1.amazonaws.com/Cigarettes+and+Weddings.zip"
+     
   return (
     <div className="App">
       <header className="app-header">
@@ -21,7 +23,7 @@ function App() {
             <div className="feature">
               <h3>Xanax and Mercy LP 2 Instruemental Rock</h3>
               <img src={xanxacover} alt="BigCo Inc. logo" />
-              <DownloadLink
+              <DownloadLinkXanax
                 url={XanaxandMercydownload}
                 fileName="/Xanax+and+Mercy.zip"
               />
@@ -30,7 +32,7 @@ function App() {
             <div className="feature">
               <h3>Cigarettes and Weddings LP 1 Ambient Post-Rock</h3>
               <img src={cigarettescover} alt="BigCo Inc. logo" />
-              <DownloadLink
+              <DownloadLinkCigarettes
                 url={CigarettesandWeddingsdownload}
                 fileName="/Cigarettes+and+Weddings.zip"
               />

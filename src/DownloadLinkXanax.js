@@ -1,18 +1,18 @@
 import { Button } from "antd";
 import React, { useState, useEffect } from "react";
 
-export const DownloadLink = ({ url, fileName }) => {
-  const [count, setCount] = useState(() => {
-    const storedCount = localStorage.getItem("counter");
+export const DownloadLinkXanax = ({ url, fileName }) => {
+  const [countXanax, setXanaxCount] = useState(() => {
+    const storedCount = localStorage.getItem("xanax");
     return storedCount ? parseInt(storedCount) : 0;
   });
 
   useEffect(() => {
-    localStorage.setItem("counter", count.toString());
-  }, [count]);
+    localStorage.setItem("xanax", countXanax.toString());
+  }, [countXanax]);
 
   const handleDownload = () => {
-    setCount(count + 1);
+    setXanaxCount(countXanax + 1);
     fetch(url)
       .then((response) => response.blob())
       .then((blob) => {
@@ -35,7 +35,7 @@ export const DownloadLink = ({ url, fileName }) => {
   return (
     <div>
       <Button type="primary" onClick={handleDownload}>
-        Donwload Album for free (downloaded {count} times)
+        Donwload Album for free (downloaded {countXanax} times)
       </Button>
     </div>
   );
