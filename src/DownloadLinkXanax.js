@@ -5,14 +5,18 @@ export const DownloadLinkXanax = ({ url, fileName }) => {
   const [countXanax, setXanaxCount] = useState(() => {
     const storedCount = localStorage.getItem("xanax");
     return storedCount ? parseInt(storedCount) : storedCount;
+
   });
 
   useEffect(() => {
     localStorage.setItem("xanax", countXanax.toString());
   }, [countXanax]);
 
+  const [FinalcountXanax, setFinalXanax] = useState(countXanax)
+
+
   const handleDownload = () => {
-    setXanaxCount(countXanax + 1);
+    setXanaxCount(FinalcountXanax + 1);
     fetch(url)
       .then((response) => response.blob())
       .then((blob) => {
@@ -35,7 +39,7 @@ export const DownloadLinkXanax = ({ url, fileName }) => {
   return (
     <div>
       <Button type="primary" onClick={handleDownload}>
-        Donwload Album for free (downloaded {countXanax} times)
+        Donwload Album for free (downloaded {FinalcountXanax} times)
       </Button>
     </div>
   );
