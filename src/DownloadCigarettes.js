@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 export const DownloadLinkCigarettes = ({ url, fileName }) => {
   const [count, setCount] = useState(() => {
     const storedCount = localStorage.getItem("counter");
-    return storedCount ? parseInt(storedCount) : 0;
+    return storedCount ? parseInt(storedCount) : storedCount;
   });
 
   useEffect(() => {
