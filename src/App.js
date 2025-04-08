@@ -5,7 +5,6 @@ import xanxacover from "./images/cover2.jpg";
 import {DownloadLinkXanax } from "./DownloadLinkXanax";
 import cigarettescover from "./images/cover.jpg"
 import { DownloadLinkCigarettes } from "./DownloadCigarettes";
-import perferomce from "./images/perferomce.jpg"
 function App() {
   const XanaxandMercydownload =
     "https://pvherreramusicfiles.s3.us-east-1.amazonaws.com/Xanax+and+Mercy+MP3.zip";
@@ -15,7 +14,6 @@ function App() {
     <div className="App">
       <header className="app-header">
         <h1>Welcome to PV HERRERA MUSIC</h1>
-        <img src={perferomce} alt="Perf of PV"></img>
         <p>Listen to more music by PV!</p>
       </header>
       <main className="app-main">
@@ -33,7 +31,7 @@ function App() {
             <div className="features-grid">
             <div className="feature">
               <h3>Cigarettes and Weddings LP 1 Ambient Post-Rock</h3>
-              <img src={cigarettescover} alt="Cigarettes and Weddings cover art" />
+              <img src={cigarettescover} alt="Cigarettes and Weddings" />
               <DownloadLinkCigarettes
                 url={CigarettesandWeddingsdownload}
                 fileName="/Cigarettes+and+Weddings.zip"
