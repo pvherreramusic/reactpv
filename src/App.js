@@ -5,6 +5,9 @@ import xanxacover from "./images/cover2.jpg";
 import {DownloadLinkXanax } from "./DownloadLinkXanax";
 import cigarettescover from "./images/cover.jpg"
 import { DownloadLinkCigarettes } from "./DownloadCigarettes";
+
+import YoutubeEmbed from "./YoutubeEmbed";
+
 function App() {
   const XanaxandMercydownload =
     "https://pvherreramusicfiles.s3.us-east-1.amazonaws.com/Xanax+and+Mercy+MP3.zip";
@@ -19,6 +22,12 @@ function App() {
       </header>
       <main className="app-main">
         <section className="features-section">
+        <h2>Featured Video</h2>
+            <div className="feature">
+              <h3>"Crystal Clearwater youtube video"</h3>
+              <YoutubeEmbed embedId="xl4MksTBR6I" />
+              
+            </div>
           <h2>Complete Discography</h2>
           <div className="features-grid">
             <div className="feature">

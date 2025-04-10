@@ -1,18 +1,28 @@
 import { Button } from "antd";
 import React, { useState, useEffect } from "react";
+import { CounterAPI } from "counterapi";
 
-export const DownloadLinkCigarettes = ({ url, fileName }) => {
-  const [count, setCount] = useState(() => {
-    const storedCount = localStorage.getItem("counter");
-    return storedCount ? parseInt(storedCount) : storedCount;
-  });
+const counter = new CounterAPI
+
+export const DownloadLinkCigarettes =  ({ url, fileName }) => {
+  const [data, setData] = useState(0);
 
   useEffect(() => {
-    localStorage.setItem("counter", count.toString());
-  }, [count]);
+    fetch('https://api.counterapi.dev/v1/cigarettesdownload/cigarettesdownload')
+    .then(response => response.json())
+    .then(jsonData => setData(jsonData));
+}, []);
+
+const { count } = data;
+
 
   const handleDownload = () => {
-    setCount(count + 1);
+    counter.up("cigarettesdownload", "cigarettesdownload").then((res) => {
+      console.log(res);
+    });
+
+
+
     fetch(url)
       .then((response) => response.blob())
       .then((blob) => {
@@ -35,8 +45,9 @@ export const DownloadLinkCigarettes = ({ url, fileName }) => {
   return (
     <div>
       <Button type="primary" onClick={handleDownload}>
-        Donwload Album for free (downloaded {count} times)
+        Donwload Album for free
       </Button>
+      <p>Downloaded {count} times</p>
     </div>
   );
 };

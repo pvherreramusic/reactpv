@@ -1,19 +1,29 @@
 import { Button } from "antd";
+import { CounterAPI } from "counterapi";
 import React, { useState, useEffect } from "react";
 
+const counter = new CounterAPI();
+
+
 export const DownloadLinkXanax = ({ url, fileName }) => {
-  const [countXanax, setXanaxCount] = useState(() => {
-    const storedCount = localStorage.getItem("xanax");
-    return storedCount ? parseInt(storedCount) : 0;
-    
-  });
+  const [data, setData] = useState(0);
 
   useEffect(() => {
-    localStorage.setItem("xanax", countXanax.toString());
-  }, [countXanax]);
+    fetch('https://api.counterapi.dev/v1/xanaxdownload/xanaxdownload')
+    .then(response => response.json())
+    .then(jsonData => setData(jsonData));
+}, []);
+
+const { count } = data;
+
 
   const handleDownload = () => {
-    setXanaxCount(prevCount => prevCount + 1);
+    counter.up("xanaxdownload", "xanaxdownload").then((res) => {
+      console.log(res);
+    });
+
+
+
     fetch(url)
       .then((response) => response.blob())
       .then((blob) => {
@@ -36,8 +46,9 @@ export const DownloadLinkXanax = ({ url, fileName }) => {
   return (
     <div>
       <Button type="primary" onClick={handleDownload}>
-        Donwload Album for free (downloaded {countXanax} times)
+        Donwload Album for free
       </Button>
+      <p>Downloaded {count} times</p>
     </div>
   );
 };
