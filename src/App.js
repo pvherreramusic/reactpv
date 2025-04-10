@@ -5,7 +5,7 @@ import xanxacover from "./images/cover2.jpg";
 import {DownloadLinkXanax } from "./DownloadLinkXanax";
 import cigarettescover from "./images/cover.jpg"
 import { DownloadLinkCigarettes } from "./DownloadCigarettes";
-
+import performance  from "./images/perferomce.JPG"
 import YoutubeEmbed from "./YoutubeEmbed";
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
     <div className="App">
       <header className="app-header">
         <h1>Welcome to PV HERRERA MUSIC</h1>
-        
+        <img src = {performance} />
         <p>Listen to more music by PV!</p>
       </header>
       <main className="app-main">
