@@ -1,31 +1,34 @@
-import React, { useState, useRef } from 'react';
-import surf from "./assets/SurfWorshipperMix02.mp3"
+import React, { useState } from "react";
+import ReactPlayer from "react-player";
 
 
-
-const XanaxPlayer = ({ src }) => {
+const XanaxPlayer= () => {
   const [playing, setPlaying] = useState(false);
-  const audioRef = useRef(null);
+  const [url, setUrl] = useState(null); // Your audio file URL
 
   const handlePlay = () => {
-    if (!playing) {
-      audioRef.current.play();
-      setPlaying(true);
-    } else {
-      audioRef.current.pause();
-      setPlaying(false);
-    }
+    setUrl("https://pvherreramusicfiles.s3.us-east-1.amazonaws.com/SurfWorshipperMix02.mp3"); // Replace with your audio file URL
+    setPlaying(true);
   };
 
   return (
     <>
-    <h4>Music sample "Surf Worshipper" from "Xanax and Mercy"</h4>
-      <button onClick={handlePlay}>{playing ? 'Pause' : 'Play'}</button>
-      <audio
-        ref={audioRef}
-        src={surf}
-        onEnded={() => setPlaying(false)}
+
+      <button onClick={handlePlay}>Play Audio</button>
+      <div><p>Click "Play Audio" to listen to "Surf Worshipper" from the 2019 album "Xanax and Mercy"</p></div>
+      <ReactPlayer 
+        url={url}
+        playing={playing}
+        onEnded={() => {
+          setPlaying(false);
+          setUrl(null);
+        }}
+        controls={true} // Optional: Show controls
+        playsinline
       />
+      
+
+
     </>
   );
 };

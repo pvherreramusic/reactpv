@@ -1,32 +1,31 @@
-import React, { useState, useRef } from 'react';
-import Selena from "./assets/SelenaGomez.mp3";
+import React, { useState } from "react";
+import ReactPlayer from "react-player";
 
-const CigPlayer = ({ src }) => {
+const CigPlayer = () => {
   const [playing, setPlaying] = useState(false);
-  const audioRef = useRef(null);
+  const [url, setUrl] = useState(null); // Your audio file URL
 
   const handlePlay = () => {
-    if (!playing) {
-      audioRef.current.play();
-      setPlaying(true);
-    } else {
-      audioRef.current.pause();
-      setPlaying(false);
-    }
+    setUrl("https://pvherreramusicfiles.s3.us-east-1.amazonaws.com/01+Selena+Gomez.mp3"); // Replace with your audio file URL
+    setPlaying(true);
   };
 
   return (
     <>
-    <h4>Music sample "Selena Gomez" from "Cigarettes and Weddings"</h4>
-      <button onClick={handlePlay}>{playing ? 'Pause' : 'Play'}</button>
-      <audio
-        ref={audioRef}
-        src={Selena}
-        onEnded={() => setPlaying(false)}
+      <button onClick={handlePlay}>Play Audio</button>
+      <div><p>Click "Play Audio" to listen to "Selena Gomez" from the 2012 album "Cigarettes and Weddings"</p></div>
+      <ReactPlayer 
+        url={url}
+        playing={playing}
+        onEnded={() => {
+          setPlaying(false);
+          setUrl(null);
+        }}
+        controls={true} // Optional: Show controls
+        playsinline
       />
     </>
   );
 };
-
 
 export default CigPlayer;
