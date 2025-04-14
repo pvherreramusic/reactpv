@@ -1,25 +1,28 @@
 .App {
-  text-align: center;
+  
   font-family: sans-serif;
 }
 
 .app-header {
-  width:100%;
+  width:180%;
   background-image: url('images/i.jpg');
   background-position:center center;
   padding: 98px 40px;
 }
 
 .app-header h1 {
+
   color: white;
   font-size: 2.5em;
   margin-bottom: 10px;
+  
 }
 
 .app-header p {
   font-size: 1.2em;
   color: white;
   margin-bottom: 20px;
+
 }
 
 .cta-button {
@@ -61,7 +64,7 @@
   padding: 10px 0;
   position: static ;
   bottom: 0;
-  width: 100%;
+  width: 190%;
 }
 
 body {
@@ -70,7 +73,7 @@ body {
 
 .App {
   font-family: sans-serif;
-  text-align: center;
+  
 }
 
 .component {
