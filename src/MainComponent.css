@@ -1,0 +1,12 @@
+.BoxWidth {
+   
+    @media (max-width: 768px) {
+      
+    }
+  }
+  .TestTitle {
+    font-size: 44px;
+    @media (max-width: 768px) {
+    font-size: 20px;
+    }
+  }
