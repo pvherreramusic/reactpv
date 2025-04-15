@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ReactPlayer from "react-player";
+import "./MusicPlayerCig.css"; // Import your CSS file for styling
 
 const CigPlayer = () => {
   const [playing, setPlaying] = useState(false);

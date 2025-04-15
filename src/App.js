@@ -9,25 +9,17 @@ import YoutubeEmbed from "./YoutubeEmbed";
 import XanaxPlayer from "./MusicPlayerXanax";
 import CigPlayer from "./MusicPlayerCig";
 
-    
-     
-
-
 function App() {
-
-  
   const XanaxandMercydownload =
     "https://pvherreramusicfiles.s3.us-east-1.amazonaws.com/Xanax+and+Mercy+MP3.zip";
   const CigarettesandWeddingsdownload =
     "https://pvherreramusicfiles.s3.us-east-1.amazonaws.com/Cigarettes+and+Weddings.zip";
 
   return (
-
     <div className="App">
       <header className="app-header">
-      
         <h1>Welcome to PV HERRERA MUSIC</h1>
-       
+
         <p>Listen to more music by PV!</p>
       </header>
       <main className="app-main">
@@ -40,7 +32,7 @@ function App() {
           <h2>Complete Discography</h2>
           <div className="features-grid">
             <div className="feature">
-            <XanaxPlayer />
+              <XanaxPlayer />
               <h3>Xanax and Mercy LP 2 Instruemental Rock</h3>
               <img src={xanxacover} alt="Xanax and Mercy Cover" />
               <DownloadLinkXanax
@@ -50,7 +42,7 @@ function App() {
             </div>
             <div className="features-grid">
               <div className="feature">
-              <CigPlayer />
+                <CigPlayer />
                 <h3>Cigarettes and Weddings LP 1 Ambient Post-Rock</h3>
                 <img src={cigarettescover} alt="Cigarettes and Weddings" />
                 <DownloadLinkCigarettes

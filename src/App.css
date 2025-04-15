@@ -4,10 +4,11 @@
 }
 
 .app-header {
-  width:100%;
   background-image: url('images/i.jpg');
-  background-position:center center;
-  padding: 98px 40px;
+  background-size: cover;
+  background-position: center;
+  height: 70vh;
+
 }
 
 .app-header h1 {
@@ -33,21 +34,26 @@
 }
 
 .app-main {
-  padding: 20px;
+
   background-color: #f4f4f4;
+  padding: 20px;
 }
 
 
 .features-grid {
   display: grid;
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  
 }
 
 .feature {
-  size-adjust: small;
-  padding: 20px;
-  border: 1px solid white;
+  background-color: #fff;
   border-radius: 5px;
+  padding: 20px;
+  text-align: center;
+  margin: 10px;
+
+
 }
 
 .app-footer {
@@ -62,5 +68,23 @@
 
 body {
   background-color: #e5e5e5;
+  display: block;
 }
 
+img {
+  width: 70%;
+  height: auto;
+}
+.about-section {
+  background-color: #f4f4f4;
+  padding: 20px;
+  text-align: center;
+}
+.about-section h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+.about-section p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}

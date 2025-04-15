@@ -6,7 +6,7 @@ import App from "./App";
 import useWindowSize from "./useWindowSize";
 import React from "react";
 const commonStyles = { background: "pink", height: 100, margin: "0 auto" };
-const SmallComponent = () => <div style={{ width: "100%" }} />;
+const SmallComponent = () => <div style={{ width: "100" }} />;
 const LargeComponent = () => (
   <div style={{  width: "500px" }} />
 );
