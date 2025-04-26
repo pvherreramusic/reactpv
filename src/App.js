@@ -33,7 +33,7 @@ function App() {
           <div className="features-grid">
             <div className="feature">
               <XanaxPlayer />
-              <h3>Xanax and Mercy LP 2 Instruemental Rock</h3>
+              <h3>Xanax and Mercy LP 2 Instruemental Rock 2019</h3>
               <img src={xanxacover} alt="Xanax and Mercy Cover" />
               <DownloadLinkXanax
                 url={XanaxandMercydownload}
@@ -43,7 +43,7 @@ function App() {
             <div className="features-grid">
               <div className="feature">
                 <CigPlayer />
-                <h3>Cigarettes and Weddings LP 1 Ambient Post-Rock</h3>
+                <h3>Cigarettes and Weddings LP 1 Ambient Post-Rock 2012</h3>
                 <img src={cigarettescover} alt="Cigarettes and Weddings" />
                 <DownloadLinkCigarettes
                   url={CigarettesandWeddingsdownload}
